@@ -1,0 +1,1082 @@
+Document Type: WSE
+item: Global
+  Version=9.02
+  Title=USB¶Ë¿Ú¹ÜÀí¹¤¾ß °²×°
+  Title French= Installation
+  Flags=00000100
+  Languages=65 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+  Copy Default=1
+  Japanese Font Name=MS Gothic
+  Japanese Font Size=9
+  Progress Bar DLL=%_WISE_%\Progress\WizWin32a.DLL
+  Start Gradient=0 0 255
+  End Gradient=0 0 0
+  Windows Flags=00000100000000010000110000001010
+  Log Pathname=%MAINDIR%\INSTALL.LOG
+  Message Font=ËÎÌå
+  Font Size=9
+  Character Set=134
+  Pages Modified=10011001011100000010111110000011
+  Extra Pages=00000000000000000000000000110000
+  Disk Label=Default
+  Disk Filename=SETUP
+  Patch Flags=0000000000000001
+  Patch Threshold=85
+  Patch Memory=4000
+  MIF PDF Version=1.0
+  MIF SMS Version=2.0
+  FTP Cluster Size=20
+  Per-User Version ID=1
+  Dialogs Version=7
+  Version File=v 1.0.0.0
+  Version Company=ÑÇÓîÈí¼þ
+  Crystal Format=10111100101100000010001001001001
+  Crystal Destination=00000000000000000000000000001011
+  Step View=È«²¿(&A)
+  Variable Name1=_SYS_
+  Variable Default1=D:\WINNT\system32
+  Variable Flags1=00001000
+  Variable Name2=_WIN_
+  Variable Default2=D:\WINNT
+  Variable Flags2=00001000
+  Variable Name3=_WISE_
+  Variable Default3=C:\PROGRA~1\WISEIN~1
+  Variable Flags3=00001000
+  Variable Name4=_ODBC16_
+  Variable Default4=D:\WINNT\system32
+  Variable Flags4=00001000
+  Variable Name5=_ODBC32_
+  Variable Default5=D:\WINNT\system32
+  Variable Flags5=00001000
+  Variable Name6=_ALIASNAME_
+  Variable Flags6=00001000
+  Variable Name7=_ALIASPATH_
+  Variable Flags7=00001000
+  Variable Name8=_ALIASTYPE_
+  Variable Flags8=00001000
+end
+item: Set Variable
+  Variable=MAINDIR
+  Value=UsbSet
+  Flags=00001100
+end
+item: Remark
+  Text=µ±Äú´´½¨Ò»¸öÐÂ°²×°³ÌÐòÊ±£¬Èç¹û²»Ïë³öÏÖRem£¨×¢ÊÍ£©¶Î£¬
+end
+item: Remark
+  Text=Çë´Ó Wise Ó¦ÓÃ³ÌÐòÄ¿Â¼µÄ Template ×ÓÄ¿Â¼ÖÐ´ò¿ªÎÄ¼þ ¿Õ¹¤³Ì.wse£¬
+end
+item: Remark
+  Text=É¾³ý Rem Óï¾ä£¬²¢´ÓÎÄ¼þ²Ëµ¥Ñ¡Ôñ±£´æ¡£
+end
+item: Open/Close INSTALL.LOG
+  Flags=00000001
+end
+item: Remark
+end
+item: Remark
+  Text=Èç¹ûÄ¿±êÏµÍ³²»¾ßÓÐ¿ÉÐ´µÄ Windows\System Ä¿Â¼£¬ÏµÍ³ÎÄ¼þ½«±»Ð´Èë Windows\ Ä¿Â¼
+end
+item: Check if File/Dir Exists
+  Pathname=%SYS%
+  Flags=10000100
+end
+item: Set Variable
+  Variable=SYS
+  Value=%WIN%
+end
+item: End Block
+end
+item: Remark
+end
+item: Remark
+  Text=APPTITLE ±äÁ¿ÊÇ°²×°³ÌÐòÓ¦ÓÃ³ÌÐòµÄ±êÌâ
+end
+item: Set Variable
+  Variable=APPTITLE
+  Value=USB¶Ë¿Ú¹ÜÀí¹¤¾ß
+  Flags=10000000
+end
+item: Remark
+end
+item: Remark
+  Text=GROUP ±äÁ¿ÊÇÎ»ÓÚ¿ªÊ¼²Ëµ¥¿ØÖÆ¿ì½Ý·½Ê½½«·ÅÈëµÄ³ÌÐòÎÄ¼þ×é
+end
+item: Set Variable
+  Variable=GROUP
+  Flags=10000000
+end
+item: Remark
+end
+item: Remark
+  Text=DISABLED ±äÁ¿±»³õÊ¼»¯ÒÔÏòºó¼æÈÝ
+end
+item: Set Variable
+  Variable=DISABLED
+  Value=!
+end
+item: Remark
+end
+item: Remark
+  Text=MAINDIR ÊÇ¿ØÖÆÄ¬ÈÏÄ¿±êÄ¿Â¼µÄ±äÁ¿
+end
+item: Set Variable
+  Variable=MAINDIR
+  Value=UsbSet
+  Flags=10000000
+end
+item: Remark
+end
+item: Remark
+  Text=USERNAME ÊÇ¿ØÖÆ Windows µÇÂ¼Ãû³ÆµÄ±äÁ¿
+end
+item: Get System Information
+  Variable=USERNAME
+  Flags=00010001
+end
+item: Remark
+end
+item: Remark
+  Text=Õâ¸ö IF/THEN/ELSE ¿é´Ó×¢²á±í¶ÁÈ¡Ä¬ÈÏµÄ Program Files ºÍ Common Ä¿Â¼
+end
+item: Check Configuration
+  Flags=10111011
+end
+item: Get Registry Key Value
+  Variable=COMMON
+  Key=SOFTWARE\Microsoft\Windows\CurrentVersion
+  Default=C:\Program Files\Common Files
+  Value Name=CommonFilesDir
+  Flags=00000100
+end
+item: Get Registry Key Value
+  Variable=PROGRAM_FILES
+  Key=SOFTWARE\Microsoft\Windows\CurrentVersion
+  Default=C:\Program Files
+  Value Name=ProgramFilesDir
+  Flags=00000100
+end
+item: Set Variable
+  Variable=MAINDIR
+  Value=D:\%MAINDIR%
+  Flags=00001100
+end
+item: Set Variable
+  Variable=EXPLORER
+  Value=1
+end
+item: Else Statement
+end
+item: Set Variable
+  Variable=MAINDIR
+  Value=D:\%MAINDIR%
+  Flags=00001100
+end
+item: End Block
+end
+item: Remark
+end
+item: Remark
+  Text=BACKUP ÊÇµ±¸²¸ÇÎÄ¼þÊ±ËùÓÐ±¸·ÝÎÄ¼þ½«±»¸´ÖÆµ½µÄÂ·¾¶±äÁ¿
+end
+item: Set Variable
+  Variable=BACKUP
+  Value=%MAINDIR%\BACKUP
+  Flags=10000000
+end
+item: Remark
+end
+item: Remark
+  Text=DOBACKUP ¾ö¶¨ÊÇ·ñÒªÖ´ÐÐ±¸·Ý¡£¿ÉÄÜµÄÖµÊÇA(Ö´ÐÐ±¸·Ý)»òB(²»Ö´ÐÐ±¸·Ý)
+end
+item: Set Variable
+  Variable=DOBACKUP
+  Value=B
+  Flags=10000000
+end
+item: Remark
+end
+item: Remark
+  Text=Èç¹û COMPONENTS ÎªÆô¶¯£¬COMPONENTS ±äÁ¿Ê¹ÓÃ¿ÉÄÜµÄÑ¡Ôñ±»³õÊ¼»¯
+end
+item: Set Variable
+  Variable=COMPONENTS
+  Flags=10000000
+end
+item: Remark
+end
+item: Remark
+  Text=BRANDING ¾ö¶¨°²×°³ÌÐòÊÇ·ñÐèÒªÓÃÒ»¸öÐÕÃûºÍ¹«Ë¾°ó¶¨¡£Ä¬ÈÏµØ£¬Õâ½«Ð´Èëµ½ INST Ä¿Â¼(°²×°½éÖÊ)
+end
+item: Set Variable
+  Variable=BRANDING
+  Value=0
+end
+item: If/While Statement
+  Variable=BRANDING
+  Value=1
+end
+item: Read INI Value
+  Variable=NAME
+  Pathname=%INST%\CUSTDATA.INI
+  Section=Registration
+  Item=Name
+end
+item: Read INI Value
+  Variable=COMPANY
+  Pathname=%INST%\CUSTDATA.INI
+  Section=Registration
+  Item=Company
+end
+item: If/While Statement
+  Variable=NAME
+end
+item: Set Variable
+  Variable=DOBRAND
+  Value=1
+end
+item: Get System Information
+  Variable=NAME
+  Flags=00000110
+end
+item: Get System Information
+  Variable=COMPANY
+  Flags=00000111
+end
+item: End Block
+end
+item: End Block
+end
+item: Remark
+end
+item: Remark
+  Text=Ïòµ¼Ñ­»·°üº¬ÔÚ°²×°³ÌÐòÖÐÓÃ»§½«¿´µ½µÄ¶Ô»°¿òÆÁÄ»
+end
+item: Remark
+  Text=Èç¹ûÄúÏë¸ü¸Ä¶Ô»°¿òÖÐµÄÍ¼ÐÎ£¬ÄúÐèÒªË«»÷Ïòµ¼Ñ­»·ÐÐ²¢¸ü¸ÄÎ»Í¼Â·¾¶À´¸Ä±äËü
+end
+item: Wizard Block
+  Direction Variable=DIRECTION
+  Display Variable=DISPLAY
+  Bitmap Pathname=%_WISE_%\Dialogs\TEMPLATE\TopImage.bmp
+  X Position=0
+  Y Position=0
+  Filler Color=8421376
+  Flags=00000001
+end
+item: Remark
+  Text=Èç¹ûÄãÒªÐÞ¸Ä×Ô¶¨Òå¶Ô»°¿òµÄ´óÐ¡£¬ÄãÖ»ÐèÒªÐÞ¸Ä¡°»¶Ó­¡±´°¿Ú¡£  
+end
+item: Remark
+  Text=ËüµÄ³ß´çÊÇËùÓÐÎ»ÓÚÏòµ¼Ñ­»·ÖÐµÄºóÐø¶Ô»°¿òµÄÄ£°å
+end
+item: Custom Dialog Set
+  Name=»¶Ó­
+  Display Variable=DISPLAY
+  item: Dialog
+    Title=%APPTITLE%
+    Title French=%APPTITLE%
+    Title German=%APPTITLE%
+    Title Portuguese=%APPTITLE% 
+    Title Spanish=%APPTITLE%
+    Title Italian=%APPTITLE%
+    Title Danish=%APPTITLE%
+    Title Dutch=%APPTITLE%
+    Title Norwegian=%APPTITLE%
+    Title Swedish=%APPTITLE%
+    Width=290
+    Height=238
+    Font Name=ËÎÌå
+    Font Size=9
+    Flags=0000000100000000
+    item: Push Button
+      Rectangle=186 200 228 214
+      Variable=DIRECTION
+      Value=N
+      Create Flags=01010000000000010000000000000001
+      Text=ÏÂÒ»²½(&N) >
+      Text French=&Suivant>
+      Text German=&Weiter>
+      Text Portuguese=&Próximo>
+      Text Spanish=&Siguiente >
+      Text Italian=&Avanti >
+      Text Danish=&Næste>
+      Text Dutch=&Volgende>
+      Text Norwegian=&Neste>
+      Text Swedish=&Nästa >
+    end
+    item: Push Button
+      Rectangle=237 200 279 214
+      Action=3
+      Create Flags=01010000000000010000000000000000
+      Text=È¡Ïû
+      Text French=Annuler
+      Text German=Abbrechen
+      Text Portuguese=Cancelar
+      Text Spanish=Cancelar
+      Text Italian=Annulla
+      Text Danish=Annuller
+      Text Dutch=Annuleren
+      Text Norwegian=Avbryt
+      Text Swedish=Avbryt
+    end
+    item: Static
+      Rectangle=0 193 285 194
+      Action=3
+      Create Flags=01010000000000000000000000000111
+    end
+    item: Static
+      Rectangle=100 10 278 44
+      Destination Dialog=4
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000000
+      Text=»¶Ó­Ê¹ÓÃ¡°%APPTITLE%¡±°²×°³ÌÐò¡£±¾³ÌÐò½«°²×°¡°%APPTITLE%¡±µ½ÄúµÄ¼ÆËã»ú¡£
+      Text French=Bienvenue sur le programme d'installation %APPTITLE%. Ce programme va installer %APPTITLE% sur votre ordinateur.
+      Text German=Willkommen im Installationsprogramm für %APPTITLE%. Dieses Programm installiert  %APPTITLE% auf Ihrem Computer.
+      Text Portuguese=Bem-vindo ao programa de configuração %APPTITLE%. Este programa instalará %APPTITLE% no seu computador
+      Text Spanish=Bienvenido al programa de Configuración %APPTITLE%. Este programa instalará %APPTITLE en su ordenador
+      Text Italian=Benvenuto nel programma di installazione di %APPTITLE%. Con questo programma puoi installare %APPTITLE% sul tuo computer.
+      Text Danish=Velkommen til %APPTITLE% installationsprogrammet. Dette program installerer %APPTITLE% på computeren.
+      Text Dutch=Welkom bij het %APPTITLE% installatieprogramma. Dit programma installeert %APPTITLE% op uw computer.
+      Text Norwegian=Velkommen til %APPTITLE% Oppsett-program. Dette programmet vil installere %APPTITLE% på datamaskinen din.
+      Text Swedish=Välkommen till installationsprogrammet för %APPTITLE%. Detta program installerar %APPTITLE% på din dator.
+    end
+    item: Static
+      Rectangle=100 50 278 190
+      Destination Dialog=4
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000000
+      Text=Ç¿ÁÒ½¨ÒéÄúÔÚÔËÐÐ±¾°²×°³ÌÐòÖ®Ç°ÍË³öËùÓÐÆäËûÔËÐÐÖÐµÄ³ÌÐò¡£
+      Text=
+      Text=µ¥»÷¡°È¡Ïû¡±¿É¹Ø±Õ°²×°³ÌÐò²¢¹Ø±ÕÆäËûÔËÐÐÖÐµÄ³ÌÐò¡£µ¥»÷¡°ÏÂÒ»²½¡±¼ÌÐø°²×°³ÌÐò¡£
+      Text=
+      Text=¾¯¸æ£º±¾¼ÆËã»ú³ÌÐòÊÜ°æÈ¨·¨ºÍ¹ú¼ÊÌõÔ¼±£»¤¡£
+      Text=
+      Text=Î´¾­ÊÚÈ¨¸´ÖÆ»òÉ¢²¥±¾¼ÆËã»ú³ÌÐò»òÆäÖÐµÄÒ»²¿·Ö£¬½«ÊÜµ½ÑÏÀ÷µÄÃñÊÂ»òÐÌÊÂ´¦·££¬²¢½«ÔÚ·¨ÂÉÐí¿ÉµÄ·¶Î§ÄÚÊÜµ½×î´ó¿ÉÄÜµÄÆðËß¡£
+      Text French=Il vous est fortement recommandé de fermer tous les programmes Windows avant d'exécuter le Programme d'Installation.
+      Text French=
+      Text French=Cliquez sur Annuler pour quitter l'Installation et fermez tous les programmes actuellement utilisés. Cliquez sur Suivant pour continuer l'installation.
+      Text French=
+      Text French=ATTENTION : Ce programme est protégé par la loi sur les droits d'exploitation et par les traités internationaux.
+      Text French=
+      Text French=Toute reproduction ou distribution, même partielle, de ce programme qui n'aura pas reçu d'autorisation préalable fera l'objet de poursuites et sera sévèrement sanctionnée par le droit civil et pénal.
+      Text German=Wir empfehlen nachdrücklich, vor Ausführen dieses Installationsprogramms alle Windows-Programme zu beenden. 
+      Text German=
+      Text German=Auf Abbrechen klicken, um die Installation zu beenden und alle laufenden Programme zu schließen. Auf Weiter klicken, um mit dem Installationsprogramm zu beginnen.
+      Text German=
+      Text German=WARNUNG: Dieses Programm ist urheberrechtlich sowie durch internationale Verträge geschützt. 
+      Text German=
+      Text German=Die unzulässige Vervielfältigung oder Verbreitung dieses Programms, ob ganz oder auszugsweise, kann schwere zivil- und strafrechtliche Konsequenzen nach sich ziehen und wird unter voller Ausschöpfung der Rechtsmittel geahndet.
+      Text Portuguese=Recomenda-se insistentemente que saia de todos os programas do Windows antes de executar este Programa de Configuração.
+      Text Portuguese=
+      Text Portuguese=Faça um clique sobre Cancelar para sair da Configuração e feche todos os programas que estiver a executar. Faça um clique sobre Próximo para continuar com o programa de configuração
+      Text Portuguese=
+      Text Portuguese=AVISO: Este programa está protegido pela lei de direitos do autor e tratados internacionais
+      Text Portuguese=
+      Text Portuguese=A reprodução e a distribuição sem autorização deste programa, ou qualquer parte dele, pode dar lugar à aplicação de severas sanções civis e criminais, e serão perseguidas à extensão máxima permitida pela lei.
+      Text Spanish=Se recomienda encarecidamente que salga de todos los programas Windows antes de ejecutar este programa de Configuración.
+      Text Spanish=
+      Text Spanish=Haga un clic en Cancelar para abandonar la Configuración y cerrar cualquier programa que haya estado ejecutando. Haga un clic en Siguiente para continuar con el programa de Configuración.
+      Text Spanish=
+      Text Spanish=AVISO: Este programa está protegido por las leyes de derechos de autor y tratados internacionales.
+      Text Spanish=
+      Text Spanish=La reproducción o distribución no autorizadas de este programa, o cualquier parte de él, podría dar como resultado rigurosas multas civiles y penales, y se entablará la máxima acción judicial que permita la ley.
+      Text Italian=Ti consigliamo di uscire da tutti i programmi Windows prima di eseguire questo programma di installazione.
+      Text Italian=
+      Text Italian=Fai clic su Annulla per uscire dal programma di installazione e chiudi tutti i programmi aperti. Fai clic su Avanti per continuare con il programma di Installazione.
+      Text Italian=
+      Text Italian=AVVERTENZA: Questo programma è protetto ai sensi delle norme di legge e delle convenzioni internazionali in materia di diritti di copyright.
+      Text Italian=
+      Text Italian=La riproduzione o la distribuzione totale o parziale non autorizzata di questo programma potrà essere soggetta a penalità civili e penali, e sarà punita con la massima severità possibile a norma di legge.
+      Text Danish=Det anbefales kraftigt at afslutte alle Windows programmer, inden man kører dette installationsprogram.
+      Text Danish=
+      Text Danish=Klik på Annuller for at forlade installationsprogrammet og lukke alle igangværende programmer. Klik på Næste for at fortsætte med installationsprogrammet.
+      Text Danish=
+      Text Danish=ADVARSEL: Dette program er beskyttet af copyright og internationale traktater. 
+      Text Danish=
+      Text Danish=Uautoriseret gengivelse eller videresalg af dette program eller dele heraf kan føre til streng civil- og/eller kriminel stra. Retsforfølgning heraf vil finde sted i det videste omfang der hjemles muligt.
+      Text Dutch=Het wordt aangeraden om alle Windows programma's af te sluiten voordat u met de installatie van dit programma begint.
+      Text Dutch=
+      Text Dutch=Klik op Annuleren om de installatie te verlaten en eventueel nog lopende programma's af te sluiten. Klik op Volgende om verder te gaan met het Installatieprogramma.
+      Text Dutch=
+      Text Dutch=WAARSCHUWING: dit computerprogramma is auteursrechtelijk beschermd.
+      Text Dutch=
+      Text Dutch=Onrechtmatige verveelvoudiging of distributie van dit programma of een gedeelte ervan is verboden en strafbaar en zal met alle beschikbare juridische middelen worden bestreden.
+      Text Norwegian=Det anbefales på det sterkeste at du avslutter alle Windows-programmer før du kjører dette Oppsett-programmet.
+      Text Norwegian=
+      Text Norwegian=Velg Avbryt for å avbryte Oppsett og lukk alle programmer som er i bruk. Velg Neste for å fortsette med Oppsett-programmet.
+      Text Norwegian=
+      Text Norwegian=ADVARSEL: Dette programmet er beskyttet i henhold til lover om opphavsrett og internasjonale konvensjoner.
+      Text Norwegian=
+      Text Norwegian=Uautorisert kopiering eller distribuering av dette programmet eller deler av det, vil resultere i alvorlig sivil og kriminell straff og vil føre til saksmål i høyest mulig utstrekning i henhold til loven. 
+      Text Swedish=Du tillråds bestämt att gå ur alla Windows-program innan du kör installationsprogrammet.
+      Text Swedish=
+      Text Swedish=Klicka på Avbryt för att gå ur installationsprogrammet och stäng eventuella program som du har laddade. Klicka på Nästa för att fortsätta med installationen.
+      Text Swedish=
+      Text Swedish=VARNING: Detta program är skyddat av upphovsrätten och internationella avtal.
+      Text Swedish=
+      Text Swedish=Om du utan tillstånd kopierar eller distribuerar detta program eller delar av det kan det bli allvarliga civilrättsliga och brottsrättliga straffpåföljder. Vi beivrar sådana överträdelser i den allra högsta utsträckning som lagen tillåter.
+    end
+    item: Static
+      Rectangle=0 0 285 193
+      Action=2
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000001011
+      Pathname=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname French=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname German=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Portuguese=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Spanish=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Italian=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Danish=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Dutch=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Norwegian=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Swedish=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+    end
+  end
+end
+remarked item: Custom Dialog Set
+  Name=Ðí¿ÉÐ­Òé
+  Display Variable=DISPLAY
+  item: Dialog
+    Title=%APPTITLE%
+    Title French=Contrat de licence
+    Title German=Lizenzvertrag
+    Title Portuguese=Acordo de Licença
+    Title Spanish=Acuerdo de Licencia
+    Title Italian=Contratto di Licenza
+    Title Danish=Licensaftale
+    Title Dutch=Vergunningscontract
+    Title Norwegian=Lisensavtale:
+    Title Swedish=Licensavtal
+    Width=290
+    Height=238
+    Font Name=ËÎÌå
+    Font Size=9
+    item: Push Button
+      Rectangle=222 200 264 214
+      Variable=ACCEPT
+      Value=N
+      Action=3
+      Create Flags=01010000000000010000000000000001
+      Text=·ñ(&N)
+      Text French=&Non
+      Text German=&Nein
+      Text Portuguese=&Não
+      Text Spanish=&No
+      Text Italian=&No
+      Text Danish=&Nej
+      Text Dutch=&Nee
+      Text Norwegian=&Nei
+      Text Swedish=&Nej [If "No" stands for a negative answer. If it stands for "number", it is "nr."]
+    end
+    item: Push Button
+      Rectangle=173 200 215 214
+      Variable=ACCEPT
+      Value=B
+      Create Flags=01010000000000010000000000000000
+      Text=ÊÇ(&Y)
+      Text French=&Oui
+      Text German=&Ja
+      Text Portuguese=&Sim
+      Text Spanish=&Sí
+      Text Italian=&Sì
+      Text Danish=&Ja
+      Text Dutch=&Ja
+      Text Norwegian=&Ja
+      Text Swedish=&Ja
+    end
+    item: Editbox
+      Rectangle=13 50 266 154
+      Value=%TEMP%\%READMEFILE%
+      Help Context=16711681
+      Create Flags=01010000101000000000100000000100
+    end
+    item: Static
+      Rectangle=10 5 235 14
+      Destination Dialog=4
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000000
+      Flags=0000000000000001
+      Name=ËÎÌå
+      Font Style=-12 0 0 0 700 0 0 0 0 3 2 1 34
+      Text=Ðí¿ÉÐ­Òé
+      Text French=Veuillez lire le contrat de licence suivant. Utilisez la barre de défilement pour prendre connaissance du reste du contrat
+      Text German=Bitte lesen Sie sich den folgenden Lizenzvertrag durch. Benutzen Sie die Bildlaufleiste, um den Rest des Vertrages zu lesen.
+      Text Portuguese=É favor ler o acordo de licença seguinte. Utilize a barra de deslocamento para ver o resto deste acordo.
+      Text Spanish=Se ruega leer el siguiente acuerdo de licencia. Utilice la barra de desplazamiento para visualizar el resto de este acuerdo.
+      Text Italian=Leggi il seguente contratto di licenza. Utilizza la barra di scorrimento per visualizzare il resto di questo accordo. 
+      Text Danish=Læs følgende licensaftale. Brug rullepanelet til at læse resten af aftalen.
+      Text Dutch=Lees het volgende vergunningscontract a.u.b. door. Gebruik de schuifbalk om de rest van het contract te lezen.
+      Text Norwegian=Vær vennlig å lese igjennom den følgende lisensavtalen. Bruk rullefeltet for å se resten av denne denne avtalen.
+      Text Swedish=Läs genom följande licensavtal. Använd rullringslisten så att du kan läsa hela avtalet.
+    end
+    item: Static
+      Rectangle=12 160 266 187
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000000
+      Text=Äú½ÓÊÜÉÏÊöÐ­ÒéµÄËùÓÐÌõ¿îÂð£¿Èç¹û½ÓÊÜ£¬µ¥»÷¡°ÊÇ¡±°´Å¥¡£Èç¹ûÑ¡Ôñ¡°²»¡±£¬°²×°³ÌÐò½«±»¹Ø±Õ¡£
+      Text French=Acceptez-vous tous les termes de ce contrat de licence ? Si oui, cliquez sur Oui. Si vous cliquez sur Non, l'Installation va se terminer
+      Text German=Akzeptieren Sie alle Bedingungen des zuvor eingeblendeten Lizenzvertrages? Dann klicken Sie auf die Schaltfläche Ja. Wenn Sie Nein wählen, wird die Installation abgebrochen.
+      Text Portuguese=Aceita todos os termos do acordo de licença anterior? Se sim, faça um clique sobre o botão Sim. Se seleccionar Não, a Configuração fechará.
+      Text Spanish=¿Acepta todos los términos del acuerdo de licencia anterior? Si afirmativo, haga un clic en el botón de Sí. Si selecciona NO, se finalizará la Configuración.
+      Text Italian=Accetti tutte le condizioni di questo contratto di licenza? Dai conferma cliccando su Sì. Se indichi il contrario cliccando su No, il programma di installazione si chiude.
+      Text Danish=Kan De acceptere alle betingelserne i denne licensaftale? I bekræftende fald trykkes på Ja trykknappen. Vælger De Nej, lukker Setup.
+      Text Dutch=Aanvaardt u alle voorwaarden van bovenstaand vergunningscontract? Zo ja, klik dan op Ja. Als u Nee kiest, sluit het installatieprogramma.
+      Text Norwegian=Godtar du alle vilkårene i den foregående avtalen? Hvis ja, trykk på Ja-tasten. Hvis du velger Nei vil Oppsett avsluttes.
+      Text Swedish=Accepterar du samtliga villkor i licensavtalet ovan? Klicka i så fall på Ja. Om du väljer Nej, avslutas installationsprogrammet.
+    end
+    item: Static
+      Rectangle=71 191 286 192
+      Action=4
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000100
+    end
+    item: Static
+      Rectangle=0 187 71 195
+      Destination Dialog=4
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000001
+      Flags=0000000000000001
+      Name=ËÎÌå
+      Font Style=-12 0 0 0 400 0 0 0 134 3 2 1 2
+      Text=Wise °²×°Ïòµ¼®
+    end
+  end
+end
+item: Custom Dialog Set
+  Name=¿ªÊ¼°²×°
+  Display Variable=DISPLAY
+  item: Dialog
+    Title=%APPTITLE%
+    Title French=%APPTITLE%
+    Title German=%APPTITLE%
+    Title Portuguese=%APPTITLE%
+    Title Spanish=%APPTITLE%
+    Title Italian=%APPTITLE%
+    Title Danish=%APPTITLE%
+    Title Dutch=%APPTITLE%
+    Title Norwegian=%APPTITLE%
+    Title Swedish=%APPTITLE%
+    Width=290
+    Height=238
+    Font Name=ËÎÌå
+    Font Size=9
+    item: Push Button
+      Rectangle=186 200 228 214
+      Variable=DIRECTION
+      Value=N
+      Create Flags=01010000000000010000000000000001
+      Text=ÏÂÒ»²½(&N) >
+      Text French=&Suivant>
+      Text German=&Weiter>
+      Text Portuguese=&Próximo>
+      Text Spanish=&Siguiente >
+      Text Italian=&Avanti >
+      Text Danish=&Næste>
+      Text Dutch=&Volgende>
+      Text Norwegian=&Neste>
+      Text Swedish=&Nästa >
+    end
+    item: Push Button
+      Rectangle=144 200 186 214
+      Variable=DIRECTION
+      Value=B
+      Create Flags=01010000000000010000000000000000
+      Text=< ÉÏÒ»²½(&B)
+      Text French=<&Retour
+      Text German=<&Zurück
+      Text Portuguese=<&Retornar
+      Text Spanish=<&Retroceder
+      Text Italian=< &Indietro
+      Text Danish=<&Tilbage
+      Text Dutch=<&Terug
+      Text Norwegian=<&Tilbake
+      Text Swedish=< &Tillbaka
+    end
+    item: Push Button
+      Rectangle=237 200 279 214
+      Action=3
+      Create Flags=01010000000000010000000000000000
+      Text=È¡Ïû
+      Text French=Annuler
+      Text German=Abbrechen
+      Text Portuguese=Cancelar
+      Text Spanish=Cancelar
+      Text Italian=Annulla
+      Text Danish=Annuller
+      Text Dutch=Annuleren
+      Text Norwegian=Avbryt
+      Text Swedish=Avbryt
+    end
+    item: Static
+      Rectangle=71 191 286 192
+      Action=3
+      Create Flags=01010000000000000000000000000111
+    end
+    item: Static
+      Rectangle=20 50 270 110
+      Create Flags=01010000000000000000000000000000
+      Text=ÏÖÔÚ×¼±¸°²×°¡°%APPTITLE%¡±¡£
+      Text=
+      Text=µã»÷¡°ÏÂÒ»²½¡±°´Å¥¿ªÊ¼°²×°»òµã»÷¡°ÉÏÒ»²½¡±°´Å¥ÖØÐÂÊäÈë°²×°ÐÅÏ¢¡£
+      Text French=Vous êtes maintenant prêt à installer %APPTITLE%.
+      Text French=
+      Text French=Cliquez sur Suivant pour commencer l'installation ou Retour pour entrer à nouveau les informations d'installation.
+      Text German=Sie sind jetzt zur Installation von %APPTITLE% bereit.
+      Text German=
+      Text German=Auf die Schaltfläche Weiter klicken, um mit dem Start der Installation zu beginnen, oder auf die Schaltfläche Zurück, um die Installationsinformationen nochmals aufzurufen.
+      Text Portuguese=Está agora pronto para instalar %APPTITLE%
+      Text Portuguese=
+      Text Portuguese=Pressione o botão Próximo para começar a instalação ou o botão Retornar para introduzir novamente a informação sobre a instalação
+      Text Spanish=Ahora estará listo para instalar %APPTITLE%.
+      Text Spanish=
+      Text Spanish=Pulse el botón de Siguiente para comenzar la instalación o el botón Retroceder para volver a introducir la información sobre la instalación.
+      Text Italian=Sei pronto ad installare %APPTITLE%.
+      Text Italian=
+      Text Italian=Premi il tasto Avanti per iniziare l’installazione o il tasto Indietro per rientrare nuovamente nei dati sull’installazione
+      Text Danish=Du er nu klar til at installere %APPTITLE%.
+      Text Danish=
+      Text Danish=Klik på Næste for at starte installationen eller på Tilbage for at ændre installationsoplysningerne.
+      Text Dutch=U bent nu klaar om %APPTITLE% te installeren.
+      Text Dutch=
+      Text Dutch=Druk op Volgende om met de installatie te beginnen of op Terug om de installatie-informatie opnieuw in te voeren.
+      Text Norwegian=Du er nå klar til å installere %APPTITLE%
+      Text Norwegian=
+      Text Norwegian=Trykk på Neste-tasten for å starte installeringen, eller Tilbake-tasten for å taste inn installasjonsinformasjonen på nytt.
+      Text Swedish=Du är nu redo att installera %APPTITLE%.
+      Text Swedish=
+      Text Swedish=Tryck på Nästa för att starta installationen eller på Tillbaka för att skriva in installationsinformationen på nytt.
+    end
+    item: Static
+      Rectangle=0 187 71 195
+      Destination Dialog=4
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000001
+      Flags=0000000000000001
+      Name=ËÎÌå
+      Font Style=-12 0 0 0 400 0 0 0 134 3 2 1 2
+      Text=Wise °²×°Ïòµ¼®
+    end
+    item: Static
+      Rectangle=10 5 235 14
+      Destination Dialog=4
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000000
+      Flags=0000000000000001
+      Name=ËÎÌå
+      Font Style=-12 0 0 0 700 0 0 0 0 3 2 1 34
+      Text=¿ªÊ¼°²×°
+      Text French=Commencer l'installation
+      Text German=Installation beginnen
+      Text Portuguese=Iniciar Instalação
+      Text Spanish=Comenzar la Instalación
+      Text Italian=Avvia Installazione
+      Text Danish=Start installationen
+      Text Dutch=Start de installatie
+      Text Norwegian=Start installeringen
+      Text Swedish=Starta installationen
+    end
+  end
+end
+item: Remark
+  Text=Õâ½«ÖØÐÂ³õÊ¼»¯ BACKUP Ä¿Â¼ÒÔ±ãËü·´Ó³ÓÃ»§¶Ô MAINDIR Ëù×÷µÄ¸ü¸Ä
+end
+item: If/While Statement
+  Variable=DISPLAY
+  Value=Ñ¡ÔñÄ¿±êÄ¿Â¼
+end
+item: Set Variable
+  Variable=BACKUP
+  Value=%MAINDIR%\BACKUP
+end
+item: End Block
+end
+item: End Block
+end
+item: Remark
+end
+item: Remark
+  Text=µ±Æô¶¯ BACKUP ÌØÐÔÊ±£¬BACKUPDIR ±»³õÊ¼»¯
+end
+item: If/While Statement
+  Variable=DOBACKUP
+  Value=A
+end
+item: Set Variable
+  Variable=BACKUPDIR
+  Value=%BACKUP%
+end
+item: End Block
+end
+item: Remark
+end
+item: Remark
+  Text=BRANDING ÐÅÏ¢±»Ð´Èëµ½°²×°½éÖÊÖÐµÄ INI ÎÄ¼þ
+end
+item: If/While Statement
+  Variable=BRANDING
+  Value=1
+end
+item: If/While Statement
+  Variable=DOBRAND
+  Value=1
+end
+item: Edit INI File
+  Pathname=%INST%\CUSTDATA.INI
+  Settings=[Registration]
+  Settings=NAME=%NAME%
+  Settings=COMPANY=%COMPANY%
+  Settings=
+end
+item: End Block
+end
+item: End Block
+end
+item: Remark
+end
+item: Remark
+  Text=¿ªÊ¼Ð´Èë INSTALL.LOG
+end
+item: Open/Close INSTALL.LOG
+end
+item: Remark
+end
+item: Remark
+  Text=¼ì²éÊ£Óà´ÅÅÌ¿Õ¼ä¸ù¾Ý×é¼þ³¤¶È¼ÆËãÊ£Óà´ÅÅÌ¿Õ¼ä
+end
+item: Remark
+  Text=Ëü±ØÐëÎ»ÓÚËùÓÐ°²×°ÎÄ¼þ¶¯×÷Ö®Ç°
+end
+item: Check Disk Space
+  Component=COMPONENTS
+end
+item: Remark
+end
+item: Remark
+  Text=Õâ¸öÒýÈë½Å±¾ÔÊÐíÐ¶ÔØÖ§³Ö
+end
+item: Include Script
+  Pathname=%_WISE_%\INCLUDE\uninstal.wse
+end
+item: Install File
+  Source=..\Exe\pUsbSetService.exe
+  Destination=%MAINDIR%\pUsbSetService.exe
+  Flags=0000000010000011
+end
+item: Install File
+  Source=..\Exe\pUsbSetTools.exe
+  Destination=%MAINDIR%\pUsbSetTools.exe
+  Flags=0000000010000010
+end
+item: Remark
+end
+item: Remark
+  Text=ÒÔÏÂÁ½ÐÐÖØÐÂÉèÖÃ COMMON ºÍ MAINDIR Îª¶ÌÎÄ¼þÃû¡£ÕâÊÇÎªÁËÏòÇ°¼æÈÝ¡£
+end
+remarked item: Set Variable
+  Variable=COMMON
+  Value=%COMMON%
+  Flags=00010100
+end
+remarked item: Set Variable
+  Variable=MAINDIR
+  Value=%MAINDIR%
+  Flags=00010100
+end
+item: Remark
+end
+item: Remark
+  Text=Õâ¸ö IF/THEN/ELSE Îª¿ì½Ý·½Ê½/Í¼±ê·ÅÖÃ¶ÁÈ¡ÕýÈ·µÄ×¢²á±íÏîÄ¿
+end
+item: Check Configuration
+  Flags=10111011
+end
+item: Get Registry Key Value
+  Variable=STARTUPDIR
+  Key=Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+  Default=%WIN%\Start Menu\Programs\StartUp
+  Value Name=StartUp
+  Flags=00000010
+end
+item: Get Registry Key Value
+  Variable=DESKTOPDIR
+  Key=Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+  Default=%WIN%\Desktop
+  Value Name=Desktop
+  Flags=00000010
+end
+item: Get Registry Key Value
+  Variable=STARTMENUDIR
+  Key=Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+  Default=%WIN%\Start Menu
+  Value Name=Start Menu
+  Flags=00000010
+end
+item: Get Registry Key Value
+  Variable=GROUPDIR
+  Key=Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+  Default=%WIN%\Start Menu\Programs
+  Value Name=Programs
+  Flags=00000010
+end
+item: Get Registry Key Value
+  Variable=CSTARTUPDIR
+  Key=Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+  Default=%STARTUPDIR%
+  Value Name=Common Startup
+  Flags=00000100
+end
+item: Get Registry Key Value
+  Variable=CDESKTOPDIR
+  Key=Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+  Default=%DESKTOPDIR%
+  Value Name=Common Desktop
+  Flags=00000100
+end
+item: Get Registry Key Value
+  Variable=CSTARTMENUDIR
+  Key=Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+  Default=%STARTMENUDIR%
+  Value Name=Common Start Menu
+  Flags=00000100
+end
+item: Get Registry Key Value
+  Variable=CGROUPDIR
+  Key=Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+  Default=%GROUPDIR%
+  Value Name=Common Programs
+  Flags=00000100
+end
+item: Set Variable
+  Variable=CGROUP_SAVE
+  Value=%GROUP%
+end
+item: Set Variable
+  Variable=GROUP
+  Value=%GROUPDIR%\%GROUP%
+end
+item: Else Statement
+end
+item: End Block
+end
+item: Remark
+end
+item: Remark
+  Text=ËùÓÐ¿É×Ô×¢²áµÄ OCX/DLL/EXE ÎÄ¼þ
+end
+item: Self-Register OCXs/DLLs
+end
+item: Remark
+end
+item: Remark
+  Text=Õâ¸öÏòµ¼Ñ­»·½áÊø°²×°
+end
+item: Edit INI File
+  Pathname=%UNINSTALL_LANG%
+  Settings=[Settings]
+  Settings=Font Character Set=134
+  Settings=
+end
+item: Add Text to INSTALL.LOG
+  Text=Delete in-use files: On
+end
+remarked item: Add Text to INSTALL.LOG
+  Text=Execute Program: %MAINDIR%\scktsrvr.exe -uninstall
+end
+remarked item: Edit INI File
+  Pathname=%MAINDIR%\AutoReg.INI
+  Settings=Windows Registry Editor Version 5.00
+  Settings=
+  Settings=[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+  Settings=IntoDLL=D:\\%MAINDIR%\\IntoDLL.EXE\\
+  Settings=
+  Settings=[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+  Settings=Userinit=C:\\Windows\\system32\\userinit.exe,%MAINDIR%\\client.exe
+  Settings=
+end
+remarked item: Rename File/Directory
+  Old Pathname=%MAINDIR%\AutoReg.ini
+  New Filename=AutoReg.Reg
+end
+item: Add Text to INSTALL.LOG
+  Text=Execute Program: %MAINDIR%\net stop UsbService
+end
+item: Add Text to INSTALL.LOG
+  Text=Execute Program: %MAINDIR%\pUsbSetService.exe /uninstall
+end
+item: Wizard Block
+  Direction Variable=DIRECTION
+  Display Variable=DISPLAY
+  Bitmap Pathname=%_WISE_%\Dialogs\Template\SideImage.bmp
+  X Position=0
+  Y Position=0
+  Filler Color=8421440
+  Flags=00000011
+end
+item: Custom Dialog Set
+  Name=Íê³É
+  Display Variable=DISPLAY
+  item: Dialog
+    Title=%APPTITLE%
+    Title French=%APPTITLE%
+    Title German=%APPTITLE%
+    Title Portuguese=%APPTITLE%
+    Title Spanish=%APPTITLE%
+    Title Italian=%APPTITLE%
+    Title Danish=%APPTITLE%
+    Title Dutch=%APPTITLE%
+    Title Norwegian=%APPTITLE%
+    Title Swedish=%APPTITLE%
+    Width=290
+    Height=238
+    Font Name=ËÎÌå
+    Font Size=9
+    Flags=0000000100000000
+    item: Push Button
+      Rectangle=186 200 228 214
+      Variable=DIRECTION
+      Value=N
+      Create Flags=01010000000000010000000000000001
+      Text=Íê³É(&F) >
+      Text French=&Terminer>
+      Text German=&Fertigstellen>
+      Text Portuguese=&Terminar >
+      Text Spanish=&Finalizar>
+      Text Italian=&Fine >
+      Text Danish=&Afslut >
+      Text Dutch=&Klaar>
+      Text Norwegian=&Avslutt>
+      Text Swedish=&Sluta>
+    end
+    item: Push Button
+      Control Name=CANCEL
+      Rectangle=237 200 279 214
+      Action=3
+      Create Flags=01010000000000010000000000000000
+      Text=È¡Ïû
+      Text French=Annuler
+      Text German=Abbrechen
+      Text Portuguese=Cancelar
+      Text Spanish=Cancelar
+      Text Italian=Annulla
+      Text Danish=Annuller
+      Text Dutch=Annuleren
+      Text Norwegian=Avbryt
+      Text Swedish=Avbryt
+    end
+    item: Static
+      Rectangle=0 193 285 194
+      Action=3
+      Create Flags=01010000000000000000000000000111
+    end
+    item: Static
+      Rectangle=100 10 275 74
+      Destination Dialog=4
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000000000
+      Text=¡°%APPTITLE%¡±ÒÑ¾­³É¹¦µØ°²×°¡£
+      Text=
+      Text=
+      Text=µã»÷¡°Íê³É¡±°´Å¥ÍË³ö°²×°³ÌÐò¡£
+      Text=
+      Text French=L'installation de %APPTITLE% est réussie.
+      Text French=
+      Text French=
+      Text French=Cliquez sur Terminer pour quitter cette installation.
+      Text French=
+      Text German=%APPTITLE% wurde erfolgreich installiert.
+      Text German=
+      Text German=
+      Text German=Zum Beenden dieser Installation Fertigstellen anklicken.
+      Text German=
+      Text Portuguese=%APPTITLE% foi instalado com êxito
+      Text Portuguese=
+      Text Portuguese=
+      Text Portuguese=Pressionar o botão Terminar para sair desta instalação
+      Text Portuguese=
+      Text Spanish=%APPTITLE% se ha instalado con éxito.
+      Text Spanish=
+      Text Spanish=
+      Text Spanish=Pulse el botón de Finalizar para salir de esta instalación.
+      Text Spanish=
+      Text Italian=%APPTITLE% è stato installato.
+      Text Italian=
+      Text Italian=
+      Text Italian=Premi il pulsante Fine per uscire dal programma di installazione
+      Text Italian=
+      Text Danish=%APPTITLE% er nu installeret korrekt.
+      Text Danish=
+      Text Danish=
+      Text Danish=Klik på Afslut for at afslutte installationen.
+      Text Danish=
+      Text Dutch=%APPTITLE% is met succes geïnstalleerd.
+      Text Dutch=
+      Text Dutch=
+      Text Dutch=Druk op Klaar om deze installatie af te ronden.
+      Text Dutch=
+      Text Norwegian=Installasjonen av %APPTITLE% er vellykket.
+      Text Norwegian=
+      Text Norwegian=
+      Text Norwegian=Trykk på Avslutt-tasten for å avslutte denne installasjonen.
+      Text Norwegian=
+      Text Swedish=Installationen av %APPTITLE% har lyckats.
+      Text Swedish=
+      Text Swedish=
+      Text Swedish=Tryck på Sluta för att gå ur installationsprogrammet.
+      Text Swedish=
+    end
+    item: Push Button
+      Control Name=BACK
+      Rectangle=144 200 186 214
+      Variable=DIRECTION
+      Value=B
+      Create Flags=01010000000000010000000000000000
+      Text=< ÉÏÒ»²½(&B)
+      Text French=<&Retour
+      Text German=<&Zurück
+      Text Portuguese=<&Retornar
+      Text Spanish=<&Retroceder
+      Text Italian=< &Indietro
+      Text Danish=<&Tilbage
+      Text Dutch=<&Terug
+      Text Norwegian=<&Tilbake
+      Text Swedish=< &Tillbaka
+    end
+    item: Static
+      Rectangle=0 0 285 193
+      Action=2
+      Enabled Color=00000000000000001111111111111111
+      Create Flags=01010000000000000000000000001011
+      Pathname=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname French=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname German=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Portuguese=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Spanish=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Italian=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Danish=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Dutch=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Norwegian=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+      Pathname Swedish=%_WISE_%\DIALOGS\TEMPLATE\SideImage.bmp
+    end
+    item: Set Control Attribute
+      Control Name=BACK
+      Operation=1
+    end
+    item: Set Control Attribute
+      Control Name=CANCEL
+      Operation=1
+    end
+  end
+end
+item: End Block
+end
+item: New Event
+  Name=Cancel
+end
+item: Remark
+  Text=Õâ¸öÒýÈë½Å±¾Ö§³ÖÒ»¸ö»Ö¸´²Ù×÷ÒÔ±ãÔÚ°²×°Íê³ÉÖ®Ç°ÓÃ»§Ñ¡ÔñÈ¡ÏûÊ±»Øµ½°²×°Ç°×´Ì¬
+end
+item: Include Script
+  Pathname=%_WISE_%\INCLUDE\rollback.wse
+end

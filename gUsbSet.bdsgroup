@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{C19920FE-E250-4475-B1D2-7C7E47125AC1}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="pUsbSetService.exe">Source\pUsbSetService.bdsproj</Projects>
+      <Projects Name="pUsbSetTools.exe">Source\pUsbSetTools.bdsproj</Projects>
+      <Projects Name="Targets">pUsbSetService.exe pUsbSetTools.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>
